@@ -3,7 +3,7 @@
 	"package": "cn.com.dreamcraft.heritane.mixin",
 	"plugin": "cn.com.dreamcraft.heritane.DCHServer",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [
+	"server": [
 	],
 	"injectors": {
 		"defaultRequire": 1
