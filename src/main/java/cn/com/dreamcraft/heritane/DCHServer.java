@@ -27,13 +27,16 @@ public class DCHServer implements DedicatedServerModInitializer, IMixinConfigPlu
 
         var configFile = FabricLoader.getInstance().getConfigDir().resolve("DCHeritane-Server.toml");
         if (!Files.exists(configFile)) {
+            DCHMain.LOGGER.warn("No existed configuration, creating.");
             DCHConfig = new Config();
         } else {
+            DCHMain.LOGGER.info("Reading from existed configuration.");
             DCHConfig = new Toml().read(FabricLoader.getInstance().getConfigDir().resolve("DCHeritane-Server.toml").toFile()).to(Config.class);
         }
 
         // Update config
         try {
+            DCHMain.LOGGER.info("Successfully read previous configuration.");
             new TomlWriter().write(DCHConfig, configFile.toFile());
         } catch (IOException e) {
             DCHMain.LOGGER.error("Error occurred during reading Configuration.", e);
