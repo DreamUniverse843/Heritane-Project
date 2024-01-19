@@ -21,15 +21,21 @@
 		"client": [
 			"cn.com.dreamcraft.heritane.DCHClient"
 		],
+		"server": [
+			"cn.com.dreamcraft.heritane.DCHServer"
+		],
 		"fabric-datagen": [
 			"cn.com.dreamcraft.heritane.DCHDataGenerator"
 		]
 	},
 	"mixins": [
-		"dreamcraft-heritane.mixins.json",
 		{
 			"config": "dreamcraft-heritane.client.mixins.json",
 			"environment": "client"
+		},
+		{
+			"config": "dreamcraft-heritane.server.mixins.json",
+			"environment": "server"
 		}
 	],
 	"depends": {
